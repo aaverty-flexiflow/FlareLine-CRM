@@ -46,20 +46,20 @@ class CommonCard extends StatelessWidget {
     //     ));
     return Container(
       decoration: ShapeDecoration(
-        color: color ?? Theme.of(context).cardTheme?.color,
+        color: color ?? Theme.of(context).cardTheme.color,
         shape: RoundedRectangleBorder(
           side: BorderSide(
               width: 1,
-              color: Theme.of(context).cardTheme?.surfaceTintColor ??
+              color: Theme.of(context).cardTheme.surfaceTintColor ??
                   Colors.transparent),
           borderRadius: BorderRadius.circular(2),
         ),
         shadows: [
           BoxShadow(
             color:
-                Theme.of(context).cardTheme?.shadowColor ?? Colors.transparent,
+                Theme.of(context).cardTheme.shadowColor ?? Colors.transparent,
             blurRadius: 13,
-            offset: Offset(0, 8),
+            offset: const Offset(0, 8),
             spreadRadius: -3,
           )
         ],

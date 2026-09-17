@@ -18,7 +18,7 @@ import 'package:flutter/material.dart';
 typedef PathWidgetBuilder = Widget Function(BuildContext, String?);
 
 final List<Map<String, Object>> MAIN_PAGES = [
-  {'routerPath': '/', 'widget': CrmHomePage()},
+  {'routerPath': '/', 'widget': const CrmHomePage()},
   {'routerPath': '/signIn', 'widget': DeferredWidget(signIn.loadLibrary, () => signIn.SignInPage())},
   {'routerPath': '/signUp', 'widget': DeferredWidget(signUp.loadLibrary, () => signUp.SignUpPage())},
   {'routerPath': '/contacts', 'widget': DeferredWidget(contacts.loadLibrary, () => contacts.ContactsPage())},
@@ -35,7 +35,7 @@ final List<Map<String, Object>> MAIN_PAGES = [
 
 class RouteConfiguration {
   static final GlobalKey<NavigatorState> navigatorKey =
-      new GlobalKey<NavigatorState>(debugLabel: 'Rex');
+      GlobalKey<NavigatorState>(debugLabel: 'Rex');
 
   static BuildContext? get navigatorContext =>
       navigatorKey.currentState?.context;

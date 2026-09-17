@@ -1,87 +1,140 @@
 
-# Flutter CRM Dashboard
+# FlareLine CRM
 
-[![GitHub stars](https://img.shields.io/github/stars/spiky-star/FlareLine-CRM.svg)](https://github.com/spiky-star/FlareLine-CRM/stargazers) [![GitHub issues](https://img.shields.io/github/issues/spiky-star/FlareLine-CRM.svg)](https://github.com/spiky-star/FlareLine-CRM/issues) [![GitHub license](https://img.shields.io/github/license/spiky-star/FlareLine-CRM.svg)](https://github.com/spiky-star/FlareLine-CRM/blob/master/LICENSE) [![Flutter](https://img.shields.io/badge/Flutter-%5E3.22.1-deepskyblue.svg)](https://flutter.dev/)  
+Un CRM moderne développé avec Flutter, offrant une interface utilisateur intuitive pour la gestion des contacts, deals et tâches.
 
+## 🚀 Fonctionnalités
 
-## Overview
-Futter CRM Dashboard is a cross-platform Customer Relationship Management application developed using Flutter. It aims to provide a seamless experience across Web, Windows, macOS, Android, and iOS. Currently in the development phase, this project offers a free version that serves as a dashboard and template for users to utilize and extend.
+- **Gestion des contacts** : Ajout, modification et suppression de contacts
+- **Gestion des deals** : Suivi des opportunités commerciales avec tableau Kanban
+- **Gestion des tâches** : Organisation des tâches avec drag & drop entre colonnes
+- **Interface moderne** : Design responsive et intuitif
+- **Architecture MVVM** : Code bien structuré et maintenable
 
-## Features
+## 🏗️ Architecture
 
-- **Cross-Platform Compatibility**: A single codebase for all major platforms.
-- **Responsive Design**: Adapts to various screen sizes and orientations.
-- **Free to Use**: The dashboard is available for free to encourage community contributions and use.
-- **Customizable Template**: Easily adapt the template to fit specific business needs.
-- **Bloc / Provider
+Le projet utilise une architecture MVVM (Model-View-ViewModel) avec :
 
-## Branches
+- **Models** : Entités de données (Contact, Deal, Task)
+- **Views** : Interface utilisateur
+- **ViewModels** : Logique métier et gestion d'état
+- **Services** : Gestion des données et API
 
-- **crm-provider**: used default provider state management
-- **main**: used flutter_bloc state management
+## 🔧 Configuration des Flavors
 
-## Screenshots
-![screenshot1.png](screenshot%2Fscreenshot1.png)
-![screenshot2.png](screenshot%2Fscreenshot2.png)
+Le projet supporte deux flavors pour différents environnements :
 
-## Getting Started
+### Flavor "dev" (par défaut)
+- Interface sans données
+- Idéal pour le développement et les tests d'UI
+- Service de données vide
 
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+### Flavor "mocked"
+- Interface avec données simulées
+- Idéal pour les démonstrations et tests
+- Service de données avec fausses données
 
-### Prerequisites
+## 🚀 Lancement du projet
 
-- Flutter SDK
-- An IDE (e.g., Visual Studio Code, Android Studio)
-- Emulators/Simulators for testing (optional)
+### Flavor Dev (par défaut)
+```bash
+flutter run --flavor dev
+```
 
-### Installation
+### Flavor Mocked
+```bash
+flutter run --flavor mocked
+```
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/spiky-star/FlareLine-CRM.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd FlareLine-CRM
-   ```
-3. Get the dependencies:
-   ```bash
-   flutter pub get
-   ```
+### Compilation pour production
+```bash
+# Web
+flutter build web --flavor dev
+flutter build web --flavor mocked
 
-### Running the Application
+# Android
+flutter build apk --flavor dev
+flutter build apk --flavor mocked
 
-- For Web:
-  ```bash
-  flutter run -d chrome
-  ```
-- For Desktop (Windows, macOS):
-  ```bash
-  flutter run -d windows
-  flutter run -d macos
-  ```
-- For Mobile (Android, iOS):
-  ```bash
-  flutter run -d android
-  flutter run -d ios
-  ```
+# iOS
+flutter build ios --flavor dev
+flutter build ios --flavor mocked
+```
 
+## 📱 Fonctionnalités principales
 
-## Contributing
+### Gestion des contacts
+- Liste des contacts avec recherche
+- Ajout de nouveaux contacts
+- Modification des informations existantes
+- Suppression de contacts
 
-We welcome contributions to the project! Please follow the guidelines below:
+### Gestion des deals
+- Tableau Kanban avec colonnes : Next, Prospect, Proposal, Won
+- Drag & drop entre colonnes pour changer le statut
+- Ajout de nouveaux deals
+- Modification et suppression
 
-1. Fork the project repository.
-2. Create a new branch for your feature (`git checkout -b feature/YourFeatureBranchName`).
-3. Commit your changes (`git commit -m 'Add your feature description here'`).
-4. Push to the branch (`git push origin feature/YourFeatureBranchName`).
-5. Create a new Pull Request.
+### Gestion des tâches
+- Tableau Kanban avec colonnes : À faire, En cours, À réviser, Terminé
+- Drag & drop entre colonnes
+- Ajout de nouvelles tâches
+- Modification et suppression
+- Attribution d'utilisateurs
 
-## License
+## 🛠️ Technologies utilisées
 
-This project is is 100% free and open-source; feel free to use it with your personal and commercial projects
+- **Flutter** : Framework de développement cross-platform
+- **Flutter Bloc** : Gestion d'état
+- **Syncfusion Flutter** : Composants UI avancés
+- **Faker** : Génération de données simulées
+- **Google Fonts** : Typographie
 
-## Acknowledgments
+## 📁 Structure du projet
 
-- Flutter community for the great framework.
-- Contributors to the project.
+```
+lib/
+├── core/
+│   ├── models/          # Modèles de données
+│   ├── services/        # Services de données
+│   └── theme/           # Thème et couleurs
+├── pages/               # Pages de l'application
+│   ├── contacts/        # Gestion des contacts
+│   ├── deals/           # Gestion des deals
+│   ├── tasks/           # Gestion des tâches
+│   └── auth/            # Authentification
+└── main.dart            # Point d'entrée principal
+```
+
+## 🔄 Drag & Drop
+
+Le projet implémente un système de drag & drop complet pour :
+
+- **Deals** : Déplacer entre les statuts (Next → Prospect → Proposal → Won)
+- **Tâches** : Déplacer entre les étapes (À faire → En cours → À réviser → Terminé)
+
+Chaque élément peut être glissé et déposé dans une nouvelle colonne, mettant à jour automatiquement son statut.
+
+## 🎨 Personnalisation
+
+### Couleurs
+Les couleurs sont définies dans `lib/core/theme/crm_colors.dart` et peuvent être facilement modifiées.
+
+### Thème
+Le thème global est configuré dans `lib/core/theme/global_theme.dart`.
+
+## 📝 Contribution
+
+1. Fork le projet
+2. Créer une branche pour votre fonctionnalité
+3. Commiter vos changements
+4. Pousser vers la branche
+5. Ouvrir une Pull Request
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+
+## 🤝 Support
+
+Pour toute question ou problème, n'hésitez pas à ouvrir une issue sur GitHub.

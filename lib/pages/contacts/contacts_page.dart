@@ -1,6 +1,5 @@
 import 'package:flareline_crm/pages/contacts/add_contact_page.dart';
 import 'package:flareline_crm/pages/crm_layout.dart';
-import 'package:flareline_uikit/components/buttons/button_widget.dart';
 import 'package:flareline_uikit/components/forms/search_widget.dart';
 import 'package:flareline_uikit/components/forms/select_widget.dart';
 import 'package:flareline_uikit/components/tables/table_widget.dart';
@@ -8,7 +7,6 @@ import 'package:flareline_uikit/components/tags/tag_widget.dart';
 import 'package:flareline_uikit/entity/table_data_entity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class ContactsPage extends CrmLayout {
@@ -71,8 +69,8 @@ class ContactsTableWidget extends TableWidget<ContactsViewModel> {
               width: 280,
               child: SearchWidget(),
             ),
-            mobile: (context) => SizedBox.shrink(),
-            tablet: (context) => SizedBox.shrink(),
+            mobile: (context) => const SizedBox.shrink(),
+            tablet: (context) => const SizedBox.shrink(),
           ),
           const Spacer(),
           _pageWidget(context, viewModel)
@@ -188,7 +186,7 @@ class ContactsViewModel extends BaseTableProvider {
       List<Map<String, dynamic>> row = [];
       var id = i;
       var item = {
-        'contactName': 'Tom${id}',
+        'contactName': 'Tom$id',
         'lastContacted': '1 Feb, 2020',
         'company': 'Starbucks',
         'contact': 'nathan.roberts@example.com',

@@ -47,8 +47,8 @@ class ContactListWidget extends TableWidget<ContactListViewModel> {
               width: 280,
               child: SearchWidget(),
             ),
-            mobile: (context) => SizedBox.shrink(),
-            tablet: (context) => SizedBox.shrink(),
+            mobile: (context) => const SizedBox.shrink(),
+            tablet: (context) => const SizedBox.shrink(),
           ),
           const Spacer(),
           SizedBox(
@@ -168,7 +168,7 @@ class MoreActionWidget extends StatelessWidget {
 }
 
 class ListItems extends StatelessWidget {
-  const ListItems({Key? key}) : super(key: key);
+  const ListItems({super.key});
 
   @override
   Widget build(BuildContext context) {

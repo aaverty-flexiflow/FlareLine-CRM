@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:faker/faker.dart' as fakerRandom;
 import 'package:flareline_crm/core/theme/crm_colors.dart';
@@ -8,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class WeekCalendarPage extends CrmLayout {
-  WeekCalendarPage({super.key});
+  const WeekCalendarPage({super.key});
 
   @override
   // TODO: implement backgroundColor
@@ -32,13 +31,13 @@ class WeekCalendarPage extends CrmLayout {
       dataSource: MeetingDataSource(_getDataSource()),
       appointmentBuilder: (context, detail) {
         if (detail.appointments.isEmpty) {
-          return SizedBox.shrink();
+          return const SizedBox.shrink();
         }
         dynamic item = detail.appointments.elementAtOrNull(0);
         if (item is Meeting) {
           return Container(
-            margin: EdgeInsets.all(8),
-            padding: EdgeInsets.all(8),
+            margin: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
                 color: item.background, borderRadius: BorderRadius.circular(8)),
             child: Text(
@@ -47,7 +46,7 @@ class WeekCalendarPage extends CrmLayout {
             ),
           );
         }
-        return SizedBox.shrink();
+        return const SizedBox.shrink();
       },
       cellBorderColor: CrmColors.border,
     );
@@ -72,13 +71,13 @@ class WeekCalendarPage extends CrmLayout {
       Meeting meeting;
       if (i % 2 == 0 && i % 4 != 0) {
         meeting = Meeting(faker.company.name(), startTime, endTime,
-            Color(0xFFE4F5FF), false, Color(0xFF45B2F2));
+            const Color(0xFFE4F5FF), false, const Color(0xFF45B2F2));
       } else if (i % 3 == 0) {
         meeting = Meeting(faker.company.name(), startTime, endTime,
-            Color(0xFFFFEAD3), false, Color(0xFFED9636));
+            const Color(0xFFFFEAD3), false, const Color(0xFFED9636));
       } else {
         meeting = Meeting(faker.company.name(), startTime, endTime,
-            Color(0xFFE1F3E8), false, Color(0xFF16AC50));
+            const Color(0xFFE1F3E8), false, const Color(0xFF16AC50));
       }
       startTime = startTime.add(Duration(hours: 2 + Random().nextInt(10)));
       endTime = startTime.add(Duration(hours: 3 + Random().nextInt(6)));

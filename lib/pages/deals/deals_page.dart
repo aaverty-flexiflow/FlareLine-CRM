@@ -8,7 +8,6 @@ import 'package:flareline_uikit/components/card/common_card.dart';
 import 'package:flareline_uikit/components/image/image_widget.dart';
 import 'package:flareline_uikit/core/mvvm/bloc/bloc_base_stless_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class DealsPage extends CrmLayout {
   const DealsPage({super.key});
@@ -138,23 +137,23 @@ class DealsPageView extends BlocBaseStlessWidget<DealsViewModel,DealsState> {
                 Expanded(child: Text(title)),
                 Container(
                   alignment: Alignment.center,
-                  child: Text(
-                    '5',
-                    style: TextStyle(color: Colors.white, fontSize: 10),
-                  ),
                   decoration: BoxDecoration(
                       color: tagColor, borderRadius: BorderRadius.circular(4)),
                   width: 24,
                   height: 24,
+                  child: const Text(
+                    '5',
+                    style: TextStyle(color: Colors.white, fontSize: 10),
+                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
-                IconButton(onPressed: () {}, icon: Icon(Icons.add))
+                IconButton(onPressed: () {}, icon: const Icon(Icons.add))
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Expanded(
@@ -174,7 +173,7 @@ class DealsPageView extends BlocBaseStlessWidget<DealsViewModel,DealsState> {
     return CommonCard(
       width: 300,
       height: 180,
-      padding: EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       child: Column(
         children: [
           Row(
@@ -184,60 +183,60 @@ class DealsPageView extends BlocBaseStlessWidget<DealsViewModel,DealsState> {
                 width: 40,
                 height: 40,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Expanded(child: Text(element['title']))
             ],
           ),
-          Divider(
+          const Divider(
             color: CrmColors.border,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
             children: [
-              Text(
+              const Text(
                 'Value',
                 style: TextStyle(fontSize: 12, color: CrmColors.paragraph),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Expanded(
                   child: Text(element['value'] ?? '',
-                      style: TextStyle(fontSize: 12)))
+                      style: const TextStyle(fontSize: 12)))
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 6,
           ),
           Row(
             children: [
-              Text('Probability',
+              const Text('Probability',
                   style: TextStyle(fontSize: 12, color: CrmColors.paragraph)),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Expanded(
                   child: Text(element['pro'] ?? '',
-                      style: TextStyle(fontSize: 12)))
+                      style: const TextStyle(fontSize: 12)))
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
             children: [
-              Icon(Icons.calendar_today, size: 18, color: CrmColors.paragraph),
-              SizedBox(
+              const Icon(Icons.calendar_today, size: 18, color: CrmColors.paragraph),
+              const SizedBox(
                 width: 6,
               ),
               Expanded(
                   child: Text(element['days'],
                       style:
-                          TextStyle(fontSize: 12, color: CrmColors.paragraph)))
+                          const TextStyle(fontSize: 12, color: CrmColors.paragraph)))
             ],
           )
         ],
@@ -246,7 +245,7 @@ class DealsPageView extends BlocBaseStlessWidget<DealsViewModel,DealsState> {
   }
 
   Widget separatorBuilder(BuildContext context, int index) {
-    return Divider(
+    return const Divider(
       height: 20,
       color: Colors.transparent,
     );

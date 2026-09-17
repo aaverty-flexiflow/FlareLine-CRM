@@ -7,7 +7,7 @@ abstract class CrmLayout extends FlarelineLayoutWidget {
   const CrmLayout({super.key});
 
   @override
-  Color get sideBarDarkColor => Color(0xFF040710);
+  Color get sideBarDarkColor => const Color(0xFF040710);
 
   @override
   String get appName => 'ezyCRM';

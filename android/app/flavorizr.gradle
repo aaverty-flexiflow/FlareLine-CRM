@@ -1,0 +1,16 @@
+android {
+    flavorDimensions += "flavor-type"
+
+    productFlavors {
+        dev {
+            dimension "flavor-type"
+            applicationId "com.flareline.crm.dev"
+            resValue "string", "app_name", "FlareLine CRM Dev"
+        }
+        mocked {
+            dimension "flavor-type"
+            applicationId "com.flareline.crm.mocked"
+            resValue "string", "app_name", "FlareLine CRM Mocked"
+        }
+    }
+}

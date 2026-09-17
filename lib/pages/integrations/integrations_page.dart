@@ -9,7 +9,6 @@ import 'package:flareline_uikit/components/card/common_card.dart';
 import 'package:flareline_uikit/components/image/image_widget.dart';
 import 'package:flareline_uikit/core/mvvm/bloc/bloc_base_stless_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class IntegrationsPage extends CrmLayout {
   const IntegrationsPage({super.key});
@@ -53,7 +52,7 @@ class IntegrationsPageView extends BlocBaseStlessWidget<IntegrationsViewModel,In
     var faker = fakerRandom.Faker();
     List<Widget> list = List.generate(50, (i) {
       return {
-        "image": 'https://picsum.photos/200?${i}',
+        "image": 'https://picsum.photos/200?$i',
         "title": faker.company.name(),
         "value": faker.company.position(),
         "pro": '20%',
@@ -82,7 +81,7 @@ class IntegrationsPageView extends BlocBaseStlessWidget<IntegrationsViewModel,In
     return CommonCard(
       width: 300,
       height: 180,
-      padding: EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -93,8 +92,8 @@ class IntegrationsPageView extends BlocBaseStlessWidget<IntegrationsViewModel,In
                 width: 40,
                 height: 40,
               ),
-              Spacer(),
-              SizedBox(
+              const Spacer(),
+              const SizedBox(
                 width: 80,
                 height: 32,
                 child: ButtonWidget(
@@ -106,7 +105,7 @@ class IntegrationsPageView extends BlocBaseStlessWidget<IntegrationsViewModel,In
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
@@ -116,26 +115,26 @@ class IntegrationsPageView extends BlocBaseStlessWidget<IntegrationsViewModel,In
                 fontSize: 13,
                 fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
             '${element['value']}',
             style: const TextStyle(color: CrmColors.heading, fontSize: 13),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
             children: [
-              Icon(Icons.calendar_today, size: 18, color: CrmColors.paragraph),
-              SizedBox(
+              const Icon(Icons.calendar_today, size: 18, color: CrmColors.paragraph),
+              const SizedBox(
                 width: 6,
               ),
               Expanded(
                   child: Text(element['days'],
                       style:
-                          TextStyle(fontSize: 12, color: CrmColors.paragraph)))
+                          const TextStyle(fontSize: 12, color: CrmColors.paragraph)))
             ],
           )
         ],
@@ -144,7 +143,7 @@ class IntegrationsPageView extends BlocBaseStlessWidget<IntegrationsViewModel,In
   }
 
   Widget separatorBuilder(BuildContext context, int index) {
-    return Divider(
+    return const Divider(
       height: 20,
       color: Colors.transparent,
     );

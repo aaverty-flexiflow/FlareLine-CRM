@@ -58,7 +58,7 @@ class DropZoneWidget extends StatelessWidget {
         FilePickerResult? file =
             await FilePicker.platform.pickFiles(allowMultiple: false);
         print('file ---- ${file?.files.single.name}');
-        if (file != null && file.files.single.name != null) {
+        if (file != null) {
           files.value.add(file.files.single.name);
         }
         _dragging.value = false;
@@ -72,12 +72,12 @@ class DropZoneWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         icon ??
-            Icon(
+            const Icon(
               Icons.cloud_upload_sharp,
               size: 60,
               color: Colors.grey,
             ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         text ??

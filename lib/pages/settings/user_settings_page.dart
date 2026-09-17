@@ -6,7 +6,6 @@ import 'package:flareline_uikit/components/forms/outborder_text_form_field.dart'
 import 'package:flareline_uikit/components/forms/select_widget.dart';
 import 'package:flareline_uikit/components/image/image_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class UserSettingsPage extends CrmLayout {
   const UserSettingsPage({super.key});

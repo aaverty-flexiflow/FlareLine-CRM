@@ -16,9 +16,9 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget? widget = null;
+    Widget? widget;
     if (imageUrl == null || imageUrl!.isEmpty) {
-      widget = SizedBox(width: width, height: height, child: Placeholder());
+      widget = SizedBox(width: width, height: height, child: const Placeholder());
     } else if (imageUrl!.startsWith("http://") || imageUrl!.startsWith("https://")) {
       widget = Image.network(
         imageUrl!,
@@ -45,9 +45,9 @@ class ImageWidget extends StatelessWidget {
     }
     if (isCircle ?? false) {
       return CircleAvatar(
-        child: widget,
         radius: (width ?? 0 / 2),
         backgroundColor: Colors.transparent,
+        child: widget,
       );
     }
 

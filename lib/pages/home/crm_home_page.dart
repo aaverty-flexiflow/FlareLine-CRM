@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class CrmHomePage extends CrmLayout {
-  CrmHomePage({super.key});
+  const CrmHomePage({super.key});
 
   @override
   String breakTabTitle(BuildContext context) {
@@ -30,7 +30,7 @@ class CrmHomePage extends CrmLayout {
           height: 400,
           child: _lineChart(),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         SizedBox(
@@ -71,8 +71,8 @@ class CrmHomePage extends CrmLayout {
                 width: 20,
               ),
               Expanded(
-                child: SizedBox(width: 400, child: _circleBarWidget()),
                 flex: 1,
+                child: SizedBox(width: 400, child: _circleBarWidget()),
               )
             ],
           ),
@@ -217,9 +217,9 @@ class CrmHomePage extends CrmLayout {
       mainAxisSize: MainAxisSize.min,
       children: [
         Wrap(
-          children: widgets,
           spacing: 20,
           runSpacing: 20,
+          children: widgets,
         )
       ],
     );
@@ -243,7 +243,7 @@ class CrmHomePage extends CrmLayout {
         ),
       )));
       if (i < datas.length - 1) {
-        widgets.add(SizedBox(
+        widgets.add(const SizedBox(
           width: 20,
         ));
       }

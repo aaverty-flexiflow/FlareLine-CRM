@@ -1,5 +1,3 @@
-import 'dart:math';
-import 'dart:ui';
 
 import 'package:faker/faker.dart' as fakerRandom;
 import 'package:flareline_crm/core/theme/crm_colors.dart';
@@ -9,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class MonthCalendarPage extends CrmLayout {
-  MonthCalendarPage({super.key});
+  const MonthCalendarPage({super.key});
 
   @override
   // TODO: implement backgroundColor
@@ -40,7 +38,7 @@ class MonthCalendarPage extends CrmLayout {
       monthCellBuilder: (context, detail) {
         if (detail.appointments.isEmpty) {
           return Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 border: Border(
                     left: BorderSide(color: CrmColors.border, width: 1),
                     top: BorderSide(color: CrmColors.border, width: 1))),
@@ -49,13 +47,13 @@ class MonthCalendarPage extends CrmLayout {
         dynamic item = detail.appointments.elementAtOrNull(0);
         if (item is Meeting) {
           return Container(
-            padding: EdgeInsets.all(8),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.all(8),
+            decoration: const BoxDecoration(
                 border: Border(
                     left: BorderSide(color: CrmColors.border, width: 1),
                     top: BorderSide(color: CrmColors.border, width: 1))),
             child: Container(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 color: item.background,
                 borderRadius: BorderRadius.circular(8),
@@ -68,7 +66,7 @@ class MonthCalendarPage extends CrmLayout {
                     height: 32,
                     isCircle: true,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Text(
@@ -111,31 +109,31 @@ class MonthCalendarPage extends CrmLayout {
             faker.company.name(),
             startTime,
             endTime,
-            Color(0xFFE4F5FF),
+            const Color(0xFFE4F5FF),
             true,
-            Color(0xFF45B2F2),
+            const Color(0xFF45B2F2),
             'https://picsum.photos/200?id=${faker.guid.guid()}');
       } else if (i % 3 == 0) {
         meeting = Meeting(
             faker.company.name(),
             startTime,
             endTime,
-            Color(0xFFFFEAD3),
+            const Color(0xFFFFEAD3),
             true,
-            Color(0xFFED9636),
+            const Color(0xFFED9636),
             'https://picsum.photos/200?id=${faker.guid.guid()}');
       } else {
         meeting = Meeting(
             faker.company.name(),
             startTime,
             endTime,
-            Color(0xFFE1F3E8),
+            const Color(0xFFE1F3E8),
             true,
-            Color(0xFF16AC50),
+            const Color(0xFF16AC50),
             'https://picsum.photos/200?id=${faker.guid.guid()}');
       }
-      startTime = startTime.add(Duration(days: 2));
-      endTime = startTime.add(Duration(hours: 1));
+      startTime = startTime.add(const Duration(days: 2));
+      endTime = startTime.add(const Duration(hours: 1));
       return meeting;
     });
 

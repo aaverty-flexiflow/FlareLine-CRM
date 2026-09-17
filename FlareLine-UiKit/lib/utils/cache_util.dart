@@ -22,7 +22,7 @@ class CacheUtil {
   final String cacheKeyPrefix = 'cache_';
 
   String getCacheKey(String key){
-    return '${cacheKeyPrefix}${key}';
+    return '$cacheKeyPrefix$key';
   }
 
   /// Checks if cache is empty.

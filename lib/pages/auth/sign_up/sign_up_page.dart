@@ -11,6 +11,8 @@ import 'package:flareline_uikit/components/forms/outborder_text_form_field.dart'
 import 'package:responsive_builder/responsive_builder.dart';
 
 class SignUpPage extends BlocBaseStlessWidget<SignUpViewModel, SignUpState> {
+  SignUpPage({super.key});
+
   @override
   Widget bodyWidget(
       BuildContext context, SignUpViewModel viewModel, SignUpState state) {
@@ -191,7 +193,7 @@ class SignUpPage extends BlocBaseStlessWidget<SignUpViewModel, SignUpState> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('have account'),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               InkWell(

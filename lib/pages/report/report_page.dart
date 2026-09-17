@@ -3,9 +3,7 @@ import 'package:flareline_crm/pages/crm_layout.dart';
 import 'package:flareline_uikit/components/charts/circular_chart.dart';
 import 'package:flareline_uikit/components/charts/line_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 
 class ReportPage extends CrmLayout {
   const ReportPage({super.key});
@@ -96,7 +94,7 @@ class ReportPage extends CrmLayout {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               Expanded(child: _buildTrackerBarChart())
@@ -110,16 +108,16 @@ class ReportPage extends CrmLayout {
   SfCartesianChart _buildTrackerBarChart() {
     return SfCartesianChart(
       plotAreaBorderWidth: 0,
-      title: ChartTitle(text: 'Working hours of employees'),
+      title: const ChartTitle(text: 'Working hours of employees'),
       primaryXAxis: const CategoryAxis(
         majorGridLines: MajorGridLines(width: 0),
       ),
-      primaryYAxis: NumericAxis(
-          majorGridLines: const MajorGridLines(width: 0),
+      primaryYAxis: const NumericAxis(
+          majorGridLines: MajorGridLines(width: 0),
           title: AxisTitle(text: 'Hours'),
           minimum: 0,
           maximum: 8,
-          majorTickLines: const MajorTickLines(size: 0)),
+          majorTickLines: MajorTickLines(size: 0)),
       series: _getTrackerBarSeries(),
     );
   }
@@ -146,7 +144,7 @@ class ReportPage extends CrmLayout {
           isVisible: true,
           labelAlignment: ChartDataLabelAlignment.top,
         ),
-        xValueMapper: (ChartSampleData sales, _) => sales.x as String,
+        xValueMapper: (ChartSampleData sales, _) => sales.x,
         yValueMapper: (ChartSampleData sales, _) => sales.y,
       ),
     ];

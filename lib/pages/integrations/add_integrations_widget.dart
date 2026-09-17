@@ -7,7 +7,6 @@ import 'package:flareline_uikit/components/modal/modal_dialog.dart';
 import 'package:flareline_uikit/components/tables/table_widget.dart';
 import 'package:flareline_uikit/core/mvvm/base_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class AddIntegrationsWidget extends BaseWidget<AddIntegrationsViewModel> {
   AddIntegrationsWidget({super.key});
@@ -111,12 +110,12 @@ class AddIntegrationsWidget extends BaseWidget<AddIntegrationsViewModel> {
         hintText: hint,
         hintStyle: const TextStyle(fontSize: 14, color: CrmColors.paragraph),
         icon: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 5),
           child: ImageWidget(
             imageUrl: 'assets/crm/$svg',
             width: 20,
             height: 20,
           ),
-          margin: EdgeInsets.symmetric(horizontal: 5),
         ));
   }
 

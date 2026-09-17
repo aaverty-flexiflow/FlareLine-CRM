@@ -44,7 +44,7 @@ class OutBorderTextFormField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (labelText != null) Text(labelText ?? '',style: TextStyle(fontSize: 14),),
+        if (labelText != null) Text(labelText ?? '',style: const TextStyle(fontSize: 14),),
         if (labelText != null)
           const SizedBox(
             height: 8,

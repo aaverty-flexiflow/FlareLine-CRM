@@ -13,7 +13,7 @@ class CheckBoxWidget extends StatelessWidget {
   final bool? checked;
   final ValueChanged<bool?, String?>? onChanged;
 
-  CheckBoxWidget(
+  const CheckBoxWidget(
       {super.key,
       this.text,
       this.checkedColor,
@@ -40,15 +40,15 @@ class CheckBoxWidget extends StatelessWidget {
                       ? checkedColor!
                       : FlarelineColors.darkBorder)),
           child: (checked ?? false)
-              ? Icon(
+              ? const Icon(
                   Icons.check,
                   color: Colors.white,
                 )
-              : SizedBox.shrink(),
+              : const SizedBox.shrink(),
         ),
         onTap: () {
           if (onChanged != null) {
-            onChanged!(!(this.checked??false), value);
+            onChanged!(!(checked??false), value);
           }
         },
       ),

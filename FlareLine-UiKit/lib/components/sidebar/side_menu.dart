@@ -35,7 +35,7 @@ class SideMenuWidget extends StatelessWidget {
     String? routePath = ModalRoute
         .of(context)
         ?.settings
-        ?.name;
+        .name;
     return routePath == path;
   }
 
@@ -179,7 +179,7 @@ class SideMenuWidget extends StatelessWidget {
     String? routePath = ModalRoute
         .of(context)
         ?.settings
-        ?.name;
+        .name;
 
     if (path == routePath) {
       return;

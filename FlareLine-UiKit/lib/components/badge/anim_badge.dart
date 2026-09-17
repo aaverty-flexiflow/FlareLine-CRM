@@ -2,7 +2,6 @@ library flareline_uikit;
 
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class AnimBadge extends StatelessWidget {
   final Color? glowColor;

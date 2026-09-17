@@ -40,23 +40,19 @@ abstract class BlocBaseViewModel<S extends BlocBaseState> extends Cubit<S> {
   void _registerEventBus(BuildContext context) {
     if (isStickEventBus) {
       _eventBusFn = GlobalEvent.eventBus.onSticky<EventInfo>().listen((event) {
-        if (event != null) {
-          if (_isDisposed) {
-            return;
-          }
-          handleEventBus(context, event);
-        }
-      });
-      return;
-    }
-    _eventBusFn = GlobalEvent.eventBus.on<EventInfo>().listen((event) {
-      if (event != null) {
         if (_isDisposed) {
           return;
         }
         handleEventBus(context, event);
+            });
+      return;
+    }
+    _eventBusFn = GlobalEvent.eventBus.on<EventInfo>().listen((event) {
+      if (_isDisposed) {
+        return;
       }
-    });
+      handleEventBus(context, event);
+        });
   }
 
   void _unRegisterEventBus() {

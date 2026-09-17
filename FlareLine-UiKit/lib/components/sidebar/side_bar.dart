@@ -6,7 +6,6 @@ import 'package:flareline_uikit/components/sidebar/side_menu.dart';
 import 'package:flareline_uikit/core/theme/flareline_colors.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_svg/flutter_svg.dart';
 
 class SideBarWidget extends StatelessWidget {
   final double? width;
@@ -108,14 +107,14 @@ class SideBarWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (groupName != null && groupName.isNotEmpty)
+        if (groupName.isNotEmpty)
           Text(
             groupElement['groupName'],
             style: TextStyle(
                 fontSize: 20,
                 color: isDark ? Colors.white60 : FlarelineColors.darkBlackText),
           ),
-        if (groupName != null && groupName.isNotEmpty)
+        if (groupName.isNotEmpty)
           const SizedBox(
             height: 10,
           ),

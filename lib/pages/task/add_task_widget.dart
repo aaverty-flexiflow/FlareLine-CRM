@@ -7,7 +7,6 @@ import 'package:flareline_uikit/components/modal/modal_dialog.dart';
 import 'package:flareline_uikit/components/tables/table_widget.dart';
 import 'package:flareline_uikit/core/mvvm/base_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_image_stack/flutter_image_stack.dart';
 
 class AddTaskWidget extends BaseWidget<AddTaskViewModel> {
@@ -106,10 +105,10 @@ class AddTaskWidget extends BaseWidget<AddTaskViewModel> {
                 const SizedBox(
                   height: 12,
                 ),
-                OutBorderTextFormField(
+                const OutBorderTextFormField(
                   hintText: 'Description',
                   hintStyle:
-                      const TextStyle(fontSize: 14, color: CrmColors.paragraph),
+                      TextStyle(fontSize: 14, color: CrmColors.paragraph),
                   maxLines: 5,
                 ),
                 const SizedBox(
@@ -151,12 +150,12 @@ class AddTaskWidget extends BaseWidget<AddTaskViewModel> {
         hintText: hint,
         hintStyle: const TextStyle(fontSize: 14, color: CrmColors.paragraph),
         icon: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 5),
           child: ImageWidget(
             imageUrl: 'assets/crm/$svg',
             width: 20,
             height: 20,
           ),
-          margin: EdgeInsets.symmetric(horizontal: 5),
         ));
   }
 

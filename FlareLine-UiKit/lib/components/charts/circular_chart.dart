@@ -34,7 +34,7 @@ class CircularhartWidget extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               )
             ],
           ),
@@ -88,8 +88,4 @@ class _BarChartProvider extends ChangeNotifier {
 
   void init() {}
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
 }
